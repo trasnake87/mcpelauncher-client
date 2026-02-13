@@ -79,7 +79,9 @@ void WindowCallbacks::setCursorLocked(bool locked) {
 }
 
 void WindowCallbacks::onClose() {
+    Log::info("Launcher", "Window close requested");
     jniSupport.onWindowClosed();
+    jniSupport.requestExitGame();
 }
 
 void WindowCallbacks::setFullscreen(bool isFs) {
